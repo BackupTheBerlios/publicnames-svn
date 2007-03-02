@@ -1,0 +1,67 @@
+<html><!-- Copyright (C) 2007 Laurent A.V. Szyster - Copylef GPL 2.0 -->
+<head>
+  <title>publicnames/tests.js</title>
+  <script src="prototype.js" type="text/javascript"></script>
+  <script src="publicnames.js" type="text/javascript"></script>
+  <script src="sat.js" type="text/javascript"></script>
+  <script src="satEN_en.js" type="text/javascript"></script>
+  <script src="tests.js" type="text/javascript"></script>
+  <style type="text/css">
+  body > div {margin: auto; width: 640px;}
+  .inputText {
+    width: 100% ; 
+    font-family: 'Courier New', 'Courrier', fixed;
+    font-size: 10pt;
+    }
+  .hidden {display: none;}
+  .PublicNames span {
+    font-family: 'Courier New', 'Courrier', fixed;
+    font-size: 10pt;
+    padding-right: 3px;
+    padding-left: 3px;
+    color: orange;
+    }
+  .PublicNames span:hover {
+    background-color: #FFFF99;
+    color: green;
+    }
+  .PublicNames span:active {
+    background-color: orange;
+    color: white;
+    }
+  .PublicNames span[class] {
+    border-left: 3px solid orange;
+    padding-right: 0px;
+    padding-left: 0px;
+    }
+  .PublicNames span[class]:active {
+    border-left: 3px solid green;
+    background-color: orange;
+    }
+  </style>
+</head>
+<body>
+<div>  
+  <h1>Public Names</h1>
+  <h2>tests.js</h2>
+  <h3>Validate</h3>
+  <form action="">
+    <input name="PublicNames" type="text" class="inputText" 
+      onblur="{testPublicNames(this.value, $('valid'));}"/>
+  </form>
+  <div id="valid" class="PublicNames hidden"></div>
+  <h3>Articulate</h3>
+  <form action="">
+    <textarea name="Articulate" rows="4" cols="50" class="inputText" 
+      onblur="{testSAT(this.value, $('articulated'));}"></textarea>
+  </form>
+  <div id="articulated" class="PublicNames hidden"></div>
+  <h3>Query</h3>
+  <form action="">
+    <input class="inputText" name="Query" type="text" 
+      onblur="{testQuery(this.value, $('result'));}"/>
+  </form>
+  <div id="result" class="PublicNames hidden"></div>
+</div>
+</body>
+</html>
